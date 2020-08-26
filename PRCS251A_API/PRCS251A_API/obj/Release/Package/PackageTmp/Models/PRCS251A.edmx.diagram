@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="671e99f7c617453a9252ebd2842f80d9" Name="Diagram1">
+        <EntityTypeShape EntityType="PRCS251A.BOOKING" Width="1.5" PointX="9.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.JOURNEY" Width="1.5" PointX="7.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.ROUTE" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.ROUTE_NUM" Width="1.5" PointX="5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.STATION" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.TRANSACTION_LOG" Width="1.5" PointX="0.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.USER_ACCOUNT" Width="1.5" PointX="12.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRCS251A.VEHICLE" Width="1.5" PointX="7.375" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="PRCS251A.JOURNEY_ID_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="PRCS251A.USER_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PRCS251A.JOURNEY_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PRCS251A.ROUTE_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PRCS251A.ROUTE_ID_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="PRCS251A.STATION_ID_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PRCS251A.JOB" Width="1.5" PointX="9.75" PointY="2.625" />
+        <AssociationConnector Association="PRCS251A.JOURNEY_ID_FK3" />
+        <AssociationConnector Association="PRCS251A.USER_ID_FK2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

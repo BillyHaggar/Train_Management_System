@@ -1,0 +1,10 @@
+#Title{
+  position: relative;
+  bottom: 200px;
+  color: #fff;
+}
+
+#login_prompt {
+  color: red;
+  margin-bottom: 10px;
+}

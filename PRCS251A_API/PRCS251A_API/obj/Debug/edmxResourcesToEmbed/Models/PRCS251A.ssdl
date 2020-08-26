@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRCS251A.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BOOKING">
+    <Key>
+      <PropertyRef Name="BOOKING_ID" />
+    </Key>
+    <Property Name="BOOKING_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="JOURNEY_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BOOKING_CODE" Type="varchar2" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JOB">
+    <Key>
+      <PropertyRef Name="JOB_ID" />
+    </Key>
+    <Property Name="JOB_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USER_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOB_DESCRIPTION" Type="varchar2" MaxLength="150" />
+    <Property Name="JOURNEY_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOB_DATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JOURNEY">
+    <Key>
+      <PropertyRef Name="JOURNEY_ID" />
+    </Key>
+    <Property Name="JOURNEY_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROUTE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BEGIN_TIME" Type="date" Nullable="false" />
+    <Property Name="ARRIVAL_TIME" Type="date" Nullable="false" />
+    <Property Name="TIME_DELAY" Type="number" Precision="38" Scale="0" />
+    <Property Name="DELAY_REASON" Type="varchar2" MaxLength="100" />
+    <Property Name="CANCELLED_REASON" Type="varchar2" MaxLength="100" />
+    <Property Name="BASE_PRICE" Type="number" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="NUM_OF_CARRIAGES" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="ROUTE">
+    <Key>
+      <PropertyRef Name="ROUTE_ID" />
+      <PropertyRef Name="STATION_ID" />
+    </Key>
+    <Property Name="ROUTE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="STATION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="STOP_NUMBER" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROUTE_NUM">
+    <Key>
+      <PropertyRef Name="ROUTE_ID" />
+    </Key>
+    <Property Name="ROUTE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROUTE_NAME" Type="varchar2" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STATION">
+    <Key>
+      <PropertyRef Name="STATION_ID" />
+    </Key>
+    <Property Name="STATION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="STATION_TYPE" Type="varchar2" MaxLength="30" />
+    <Property Name="STATION_NAME" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="S_ADDRESS_LINE_1" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="S_ADDRESS_LINE_2" Type="varchar2" MaxLength="20" />
+    <Property Name="S_POSTCODE" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_LOG">
+    <Key>
+      <PropertyRef Name="TRANSACTION_ID" />
+    </Key>
+    <Property Name="TRANSACTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CARD_LAST_DIGITS" Type="varchar2" MaxLength="4" Nullable="false" />
+    <Property Name="TIME_OF_TRANSACTION" Type="date" Nullable="false" />
+    <Property Name="TRANSACTION_COST" Type="number" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER_ACCOUNT">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar2" MaxLength="30" />
+    <Property Name="USER_PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="USER_RANK" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="DATE_OF_BIRTH" Type="date" Nullable="false" />
+    <Property Name="U_ADDRESS_LINE_1" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="U_ADDRESS_LINE_2" Type="varchar2" MaxLength="20" />
+    <Property Name="U_POSTCODE" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="U_TOWN" Type="varchar2" MaxLength="15" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="CONTACT_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="ALTERNATIVE_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="MARKETING_OPT_IN" Type="varchar2" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VEHICLE">
+    <Key>
+      <PropertyRef Name="VEHICLE_REG" />
+    </Key>
+    <Property Name="VEHICLE_REG" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="JOURNEY_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="P_CAPACITY" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="STORED_LOCATION" Type="varchar2" MaxLength="20" />
+    <Property Name="VEHICLE_TYPE" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="JOURNEY_ID_FK">
+    <End Role="JOURNEY" Type="Self.JOURNEY" Multiplicity="0..1" />
+    <End Role="VEHICLE" Type="Self.VEHICLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOURNEY">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Principal>
+      <Dependent Role="VEHICLE">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JOURNEY_ID_FK2">
+    <End Role="JOURNEY" Type="Self.JOURNEY" Multiplicity="1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOURNEY">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JOURNEY_ID_FK3">
+    <End Role="JOURNEY" Type="Self.JOURNEY" Multiplicity="0..1" />
+    <End Role="JOB" Type="Self.JOB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOURNEY">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Principal>
+      <Dependent Role="JOB">
+        <PropertyRef Name="JOURNEY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ROUTE_ID_FK">
+    <End Role="ROUTE_NUM" Type="Self.ROUTE_NUM" Multiplicity="1" />
+    <End Role="JOURNEY" Type="Self.JOURNEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE_NUM">
+        <PropertyRef Name="ROUTE_ID" />
+      </Principal>
+      <Dependent Role="JOURNEY">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ROUTE_ID_FK2">
+    <End Role="ROUTE_NUM" Type="Self.ROUTE_NUM" Multiplicity="1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE_NUM">
+        <PropertyRef Name="ROUTE_ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="STATION_ID_FK">
+    <End Role="STATION" Type="Self.STATION" Multiplicity="1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATION">
+        <PropertyRef Name="STATION_ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="STATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="USER_ID_FK">
+    <End Role="USER_ACCOUNT" Type="Self.USER_ACCOUNT" Multiplicity="1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_ACCOUNT">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="USER_ID_FK2">
+    <End Role="USER_ACCOUNT" Type="Self.USER_ACCOUNT" Multiplicity="0..1" />
+    <End Role="JOB" Type="Self.JOB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_ACCOUNT">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="JOB">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PRCS251AStoreContainer">
+    <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="JOB" EntityType="Self.JOB" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="JOURNEY" EntityType="Self.JOURNEY" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="ROUTE" EntityType="Self.ROUTE" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="ROUTE_NUM" EntityType="Self.ROUTE_NUM" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="STATION" EntityType="Self.STATION" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="TRANSACTION_LOG" EntityType="Self.TRANSACTION_LOG" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="USER_ACCOUNT" EntityType="Self.USER_ACCOUNT" Schema="PRCS251A" store:Type="Tables" />
+    <EntitySet Name="VEHICLE" EntityType="Self.VEHICLE" Schema="PRCS251A" store:Type="Tables" />
+    <AssociationSet Name="JOURNEY_ID_FK" Association="Self.JOURNEY_ID_FK">
+      <End Role="JOURNEY" EntitySet="JOURNEY" />
+      <End Role="VEHICLE" EntitySet="VEHICLE" />
+    </AssociationSet>
+    <AssociationSet Name="JOURNEY_ID_FK2" Association="Self.JOURNEY_ID_FK2">
+      <End Role="JOURNEY" EntitySet="JOURNEY" />
+      <End Role="BOOKING" EntitySet="BOOKING" />
+    </AssociationSet>
+    <AssociationSet Name="JOURNEY_ID_FK3" Association="Self.JOURNEY_ID_FK3">
+      <End Role="JOURNEY" EntitySet="JOURNEY" />
+      <End Role="JOB" EntitySet="JOB" />
+    </AssociationSet>
+    <AssociationSet Name="ROUTE_ID_FK" Association="Self.ROUTE_ID_FK">
+      <End Role="ROUTE_NUM" EntitySet="ROUTE_NUM" />
+      <End Role="JOURNEY" EntitySet="JOURNEY" />
+    </AssociationSet>
+    <AssociationSet Name="ROUTE_ID_FK2" Association="Self.ROUTE_ID_FK2">
+      <End Role="ROUTE_NUM" EntitySet="ROUTE_NUM" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="STATION_ID_FK" Association="Self.STATION_ID_FK">
+      <End Role="STATION" EntitySet="STATION" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="USER_ID_FK" Association="Self.USER_ID_FK">
+      <End Role="USER_ACCOUNT" EntitySet="USER_ACCOUNT" />
+      <End Role="BOOKING" EntitySet="BOOKING" />
+    </AssociationSet>
+    <AssociationSet Name="USER_ID_FK2" Association="Self.USER_ID_FK2">
+      <End Role="USER_ACCOUNT" EntitySet="USER_ACCOUNT" />
+      <End Role="JOB" EntitySet="JOB" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

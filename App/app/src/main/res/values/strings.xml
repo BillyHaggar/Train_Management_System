@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Thomas and Co.</string>
+    <string name="buttonSearch">Search</string>
+    <string name="textWelcome">Book a journey...</string>
+</resources>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PRCS251AStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BOOKINGs">
+      <EntityTypeMapping TypeName="PRCS251A.BOOKING">
+        <MappingFragment StoreEntitySet="BOOKING">
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+          <ScalarProperty Name="JOURNEY_ID" ColumnName="JOURNEY_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="BOOKING_CODE" ColumnName="BOOKING_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOURNEYs">
+      <EntityTypeMapping TypeName="PRCS251A.JOURNEY">
+        <MappingFragment StoreEntitySet="JOURNEY">
+          <ScalarProperty Name="JOURNEY_ID" ColumnName="JOURNEY_ID" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="BEGIN_TIME" ColumnName="BEGIN_TIME" />
+          <ScalarProperty Name="ARRIVAL_TIME" ColumnName="ARRIVAL_TIME" />
+          <ScalarProperty Name="TIME_DELAY" ColumnName="TIME_DELAY" />
+          <ScalarProperty Name="DELAY_REASON" ColumnName="DELAY_REASON" />
+          <ScalarProperty Name="CANCELLED_REASON" ColumnName="CANCELLED_REASON" />
+          <ScalarProperty Name="BASE_PRICE" ColumnName="BASE_PRICE" />
+          <ScalarProperty Name="NUM_OF_CARRIAGES" ColumnName="NUM_OF_CARRIAGES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROUTEs">
+      <EntityTypeMapping TypeName="PRCS251A.ROUTE">
+        <MappingFragment StoreEntitySet="ROUTE">
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="STATION_ID" ColumnName="STATION_ID" />
+          <ScalarProperty Name="STOP_NUMBER" ColumnName="STOP_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROUTE_NUM">
+      <EntityTypeMapping TypeName="PRCS251A.ROUTE_NUM">
+        <MappingFragment StoreEntitySet="ROUTE_NUM">
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="ROUTE_NAME" ColumnName="ROUTE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATIONs">
+      <EntityTypeMapping TypeName="PRCS251A.STATION">
+        <MappingFragment StoreEntitySet="STATION">
+          <ScalarProperty Name="STATION_ID" ColumnName="STATION_ID" />
+          <ScalarProperty Name="STATION_TYPE" ColumnName="STATION_TYPE" />
+          <ScalarProperty Name="STATION_NAME" ColumnName="STATION_NAME" />
+          <ScalarProperty Name="S_ADDRESS_LINE_1" ColumnName="S_ADDRESS_LINE_1" />
+          <ScalarProperty Name="S_ADDRESS_LINE_2" ColumnName="S_ADDRESS_LINE_2" />
+          <ScalarProperty Name="S_POSTCODE" ColumnName="S_POSTCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTION_LOG">
+      <EntityTypeMapping TypeName="PRCS251A.TRANSACTION_LOG">
+        <MappingFragment StoreEntitySet="TRANSACTION_LOG">
+          <ScalarProperty Name="TRANSACTION_ID" ColumnName="TRANSACTION_ID" />
+          <ScalarProperty Name="CARD_LAST_DIGITS" ColumnName="CARD_LAST_DIGITS" />
+          <ScalarProperty Name="TIME_OF_TRANSACTION" ColumnName="TIME_OF_TRANSACTION" />
+          <ScalarProperty Name="TRANSACTION_COST" ColumnName="TRANSACTION_COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_ACCOUNT">
+      <EntityTypeMapping TypeName="PRCS251A.USER_ACCOUNT">
+        <MappingFragment StoreEntitySet="USER_ACCOUNT">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+          <ScalarProperty Name="USER_RANK" ColumnName="USER_RANK" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="U_ADDRESS_LINE_1" ColumnName="U_ADDRESS_LINE_1" />
+          <ScalarProperty Name="U_ADDRESS_LINE_2" ColumnName="U_ADDRESS_LINE_2" />
+          <ScalarProperty Name="U_POSTCODE" ColumnName="U_POSTCODE" />
+          <ScalarProperty Name="U_TOWN" ColumnName="U_TOWN" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CONTACT_NUMBER" ColumnName="CONTACT_NUMBER" />
+          <ScalarProperty Name="ALTERNATIVE_NUMBER" ColumnName="ALTERNATIVE_NUMBER" />
+          <ScalarProperty Name="MARKETING_OPT_IN" ColumnName="MARKETING_OPT_IN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICLEs">
+      <EntityTypeMapping TypeName="PRCS251A.VEHICLE">
+        <MappingFragment StoreEntitySet="VEHICLE">
+          <ScalarProperty Name="VEHICLE_REG" ColumnName="VEHICLE_REG" />
+          <ScalarProperty Name="JOURNEY_ID" ColumnName="JOURNEY_ID" />
+          <ScalarProperty Name="P_CAPACITY" ColumnName="P_CAPACITY" />
+          <ScalarProperty Name="STORED_LOCATION" ColumnName="STORED_LOCATION" />
+          <ScalarProperty Name="VEHICLE_TYPE" ColumnName="VEHICLE_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOBs">
+      <EntityTypeMapping TypeName="PRCS251A.JOB">
+        <MappingFragment StoreEntitySet="JOB">
+          <ScalarProperty Name="JOB_DATE" ColumnName="JOB_DATE" />
+          <ScalarProperty Name="JOURNEY_ID" ColumnName="JOURNEY_ID" />
+          <ScalarProperty Name="JOB_DESCRIPTION" ColumnName="JOB_DESCRIPTION" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

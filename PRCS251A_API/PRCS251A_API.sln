@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRCS251A_API", "PRCS251A_API\PRCS251A_API.csproj", "{51001D0E-B1CC-4727-8725-D4546264149F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51001D0E-B1CC-4727-8725-D4546264149F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51001D0E-B1CC-4727-8725-D4546264149F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51001D0E-B1CC-4727-8725-D4546264149F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51001D0E-B1CC-4727-8725-D4546264149F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00831C1F-8199-4ED9-B175-45C4C5DC3E09}
+	EndGlobalSection
+EndGlobal
